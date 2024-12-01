@@ -113,7 +113,7 @@ passwords with:");
 ##        return self.fromVarToString(var);
 
     def grabWord(self,length):
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'._()*+,-/:;<=>?@{|}[\]^`~"
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'._()*+,-/:;<=>?@{|}[\\]^`~"
         var = [];
         while len(self.fromVarToString(var)) < length:
             prev = len(var);

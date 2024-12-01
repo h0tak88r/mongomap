@@ -1,4 +1,3 @@
-
 import sys;
 import requests;
 import urllib;
@@ -85,12 +84,12 @@ class Scanner():
             for param in data:
                 data[param] = urllib.parse.quote(data[param]);
             strData = self.implodeData(data);
-            req = session.get(self.url + "?" + strData,headers=self.headers,cookies=self.cookies,allow_redirects=False);
+            req = session.get(self.url + "?" + strData,headers=self.headers,cookies=self.cookies,allow_redirects=False, verify=False);
         elif self.method == "post":
-            req = session.post(self.url,data,headers=self.headers,cookies=self.cookies,allow_redirects=False);
+            req = session.post(self.url,data,headers=self.headers,cookies=self.cookies,allow_redirects=False, verify=False);
         elif self.method == "json":
             #print("DEBUG:",data);
-            req = session.post(self.url, json=data);
+            req = session.post(self.url, json=data, verify=False);
         
         return req;
                 
@@ -163,4 +162,3 @@ class Scanner():
         #except Exception as err:
             #print(err);
             #return False;
-        
